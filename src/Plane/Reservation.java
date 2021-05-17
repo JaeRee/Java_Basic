@@ -90,7 +90,7 @@ public class Reservation {
 				
 				public void reserve() {
 					airline.printWelcom();
-					System.out.print("좌석을 선택해 주세요.(1-30,A-F) : ");
+					System.out.print("좌석을 선택해 주세요.(1~30,A~F) : ");
 					String str = sc.next();
 					String[] strArr = str.split(",");
 					
