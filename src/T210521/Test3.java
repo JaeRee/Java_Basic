@@ -63,20 +63,23 @@ public class Test3 {
 		label2.setAlignment(Label.CENTER);
 		
 
-		
-		
-		
-		
-
 //********************* 위에가 P2 **********************************************		
-	
-		
 		
 		
 		Panel p3 = new Panel();
 		p3.setBackground(Color.BLUE);
 		p3.setLayout(null);
 		
+		
+		Label label3 = new Label("당신의 혈액형은 ..");
+		label3.setBackground(Color.white);
+		label3.setBounds(50, 50, 380, 110);
+		Font font2 = new Font("DialogInput", Font.BOLD, 20); // 글자 스타일, 크기
+		label3.setFont(font2); label3.setForeground(Color.black);
+		label3.setAlignment(Label.CENTER);
+		
+		
+		p3.add(label3);
 		
 		
 		
