@@ -10,7 +10,6 @@ public class Test8 extends Frame {
 	TextField tfid, tfpw;
 	Button ok;
 	
-	
 	Test8(){
 		super("로그인 이벤트 연습");	//Frame("로그인 이벤트 연습"); 랑 똑같다..
 		lid = new Label("ID : ", Label.RIGHT);
@@ -52,7 +51,7 @@ public class Test8 extends Frame {
 	}
 	
 	
-	// 내부 클래스 사용, TextFiled 입력 후 엔터 or ok버튼 클릭시 이벤트 처리
+	// 내부 클래스 사용, TextFiled 입력 후 엔터 or ok버튼 클릭시 이벤트 처리 
 	class Event4 implements ActionListener {
 		
 		public void actionPerformed(ActionEvent arg0) {
@@ -63,14 +62,15 @@ public class Test8 extends Frame {
 			if(!id.equals("admin")) {		// id가 admin이 아니면 참
 				System.out.println("아이디가 틀렸습니다. 다시 입력 하세요.");
 				tfid.requestFocus();		// tfid로 포커스 옮김
-				tfid.selectAll();			// tfid 전체선택해서 다시 입력시 지워지게
+				tfid.selectAll();			// tfid 전체선택 해서 다시 입력시 지워지게
+			} else if(!password.equals("1234")) {		// id가 admin이 아니면 참
+				System.out.println("비밀번호가 틀렸습니다. 다시 입력 하세요.");
+				tfid.requestFocus();	
+				tfid.selectAll();		
+			} else {
+				System.out.println(id+"님, 환영합니다.");
 			}
-			
-			
-			
 			
 		}
 	}
-	
-
 }

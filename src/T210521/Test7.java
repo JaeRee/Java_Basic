@@ -39,11 +39,6 @@ public class Test7 {
 		
 		
 		
-		
-		
-		
-		
-		
 		f.addWindowListener(new WindowAdapter() {	///****익명클래쓰****
 			public void windowClosing(WindowEvent e) {
 				System.out.println("프레임 종료합니다.");
