@@ -8,7 +8,8 @@ public class Inside {
 						
 						
 						public class Inside2{
-					
+							int value = 0;
+							
 							public void View() {
 									System.out.println("클래스2의 내부야");
 							}
