@@ -3,31 +3,47 @@ package Kanu;
 
 import java.awt.*;
 import java.awt.event.*;
-
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import java.awt.image.*;
 
 
 public class Test1 extends Frame {
-		JScrollPane scrollpane;
+	
 	   Checkbox cb1,cb2,cb3,cb4,cb5,cb6;
 	   CheckboxGroup group1, group2;
-	   Label L1, L2, L3;
+	   Label L1, L2, L3, L4;
 	   Panel p1, p2, p3;
 	   Button ok;
-	   ImageIcon Icon;									// 이미지 아이콘 선언
+	   Image img=null, img2=null;
 	   int coffee_money, size_money=0;
-	
+	   
+
 	   
 	   Test1(String title){
 		super(title);
 	    setBounds(300,300,630,600); // 237 465 추가
 	    setLayout(null); 
-	    setBackground(new Color(41,32,35));
-	    
-	    Icon = new ImageIcon("src/ball.jpg");	// 이미지 생성 및 경로 설정
+	    setBackground(new Color(41,32,35));		
+	   // Container c = this.getContentPane();			// JFrame 은 컨테이너 사용해서 배경색넣음
+	   // c.setBackground(new Color(41,32,35));
 		
+	    
+	    
+	    
+	  //**************** IMG
+	    
+	   Toolkit t = Toolkit.getDefaultToolkit();
+	   img = t.getImage("images/Kanu.jpg");
+	   img2 = t.getImage("images/Kanu12.jpg");
+
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	   //**************** Checkbox1 (커피선택)
 	   group1 = new CheckboxGroup(); 
 	   cb1 = new Checkbox("아메리카노(1000원)",group1, false);
@@ -41,14 +57,6 @@ public class Test1 extends Frame {
 	   cb5 = new Checkbox("Medium(+500원)",group2, false);
 	   cb6 = new Checkbox("Large(+1000원)",group2, false);
 	    
-	   
-	   
-	   
-	   
-	   
-
-	   
-	   
 	   //**************** p1  (커피선택)
 	   
       p1 = new Panel();
@@ -58,8 +66,6 @@ public class Test1 extends Frame {
       p1.setBounds(20,60,170,280);
       
 	   
-      
-      
 	   //**************** p2  (사이즈선택)
 	   
       p2 = new Panel();
@@ -68,22 +74,8 @@ public class Test1 extends Frame {
       p2.setForeground(Color.black);
       p2.setBounds(200,60,170,280);
       
-      p3 = new Panel();
-      p3.setBounds(300, 300, 300, 300);
-      
-      JPanel p3 = new JPanel() {
-    	public void paintComponent(Graphics g) {
-    			g.drawImage(Icon.getImage(),0,0,null);
-    			setOpaque(false);
-    			super.paintComponent(g);
-    	}
-      };
-      
-      scrollpane = new JScrollPane(p3);
-      setContentPane(scrollpane);
       
 
-      
       
       
       //*************** Label L1 부분  //
@@ -100,6 +92,9 @@ public class Test1 extends Frame {
       L2.setAlignment(Label.CENTER);
       L2.setText("사이즈 선택");
       
+      p3 = new Panel();
+      p3.setLayout(null);
+      p3.setBounds(200, 0, 350, 525);
       
 	   //***************** 계산 ok버튼
 	   ok = new Button("계산");
@@ -114,7 +109,11 @@ public class Test1 extends Frame {
 	   L3.setBounds(20,460,350,70);
 	   L3.setBackground(new Color(30,27,36));
 	   L3.setAlignment(Label.CENTER);
+	   
+	   
 	    
+	 //**************** 선택하신 커피는 결과
+
 	   
 		
 	    this.addWindowListener(new WindowAdapter(){ 
@@ -124,20 +123,20 @@ public class Test1 extends Frame {
 	       });
 	    
 	    
-	    
 	    p1.add(L1); p1.add(cb1);p1.add(cb2);p1.add(cb3);
 	    p2.add(L2); p2.add(cb4); p2.add(cb5); p2.add(cb6);
 	    add(ok); add(L3); 
-	    add(p1); add(p2); add(p3);
-		
+	    add(p1); add(p2); 
+	    
+	    
 		this.setVisible(true);
 	   }
 	   
+	   public void paint(Graphics g) {
+		   g.drawImage(img,200,20,this);
+		   g.drawImage(img2,0,0,this);
+	   }
 	   
-	   private void setContentPane(JScrollPane scrollpane2) {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 	class EventF implements ActionListener{
