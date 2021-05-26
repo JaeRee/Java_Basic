@@ -1,11 +1,11 @@
-package T210525;
+package T210526;
 
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 
-public class Test10 extends Frame{
+public class Yes extends Frame{
 	Button b1,b2,b3,b4, b5;
 	Font f1 = new Font("Webdings",Font.BOLD+Font.PLAIN, 22);
 	Font f2 = new Font("Webdings",Font.BOLD+Font.PLAIN, 38);
@@ -13,7 +13,7 @@ public class Test10 extends Frame{
 	Label L1;
 	Image img = null, img2 =null;
 	
-	Test10(String title){
+	Yes(String title){
 	   super(title);
 	    this.setBounds(500,300,500,600);
 	    this.setLayout(null); // 프레임 레이아웃 사용안함!
@@ -126,14 +126,11 @@ public class Test10 extends Frame{
 	
 	
 	public void paint(Graphics g) {			// 오버라이딩
-		int imgWidth, imgHeight;
 		
 		if(img == null) {
 			return;							// 종료하고 돌아가
 		}
-		
-		imgWidth  = img.getWidth(this);		// 이미지 너비와 높이 알아오기
-		imgHeight = img.getHeight(this);
+
 		
 		g.drawImage(img, 0, 0,this);
 		g.drawImage(img2, 50, 200,this);
@@ -141,20 +138,26 @@ public class Test10 extends Frame{
 	}
 	
 	
-	class EventColor implements ActionListener{
+	class Event123 implements ActionListener{
 	      public void actionPerformed(ActionEvent e) {
+	       //  Button b1 = (Button)e.getSource();
 	         
-	         
+	    	  
+	    	  if(e.getActionCommand() == "아메리카노") {
+	    		  //  ta.setText("어쩌고 저쩌고 입니다");
+	    	  }
 	         
 	      }
 	      
 	   }
 	
+
+	
 	
 	public static void main(String[] args) {
 		
 		
-		new Test10("이미지 넣기");
+		new Yes("이미지 넣기");
 		
 	}
 	
