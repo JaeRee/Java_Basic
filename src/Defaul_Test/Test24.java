@@ -1,3 +1,4 @@
+package Defaul_Test;
 //		1
 //	   212
 //	  32123
@@ -6,12 +7,12 @@
 
 public class Test24 {
 	public static void main (String[] args) {
-		String star="★";
+		String star="?��";
 		
 		for(int i=0 ; i<5 ; i++) {
 			
 			
-			for(int j=4-i ; j>0 ; j--){		// 5번 공간, 4, 3, 2, 1, 
+			for(int j=4-i ; j>0 ; j--){		// 5�? 공간, 4, 3, 2, 1, 
 				System.out.print(" ");
 			}
 			

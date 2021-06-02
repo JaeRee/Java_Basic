@@ -1,3 +1,4 @@
+package Defaul_Test;
 // 음료 자판기 프로그램
 import java.util.Scanner;
 
