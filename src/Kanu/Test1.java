@@ -20,7 +20,7 @@ public class Test1 extends Frame {
 	   
 	   Test1(String title){
 		super(title);
-	    setBounds(300,300,630,600); // 237 465 추가
+	    setBounds(300,300,1000,600); // 237 465 추가
 	    setLayout(null); 
 	    setBackground(new Color(41,32,35));		
 	   // Container c = this.getContentPane();			// JFrame 은 컨테이너 사용해서 배경색넣음
@@ -35,12 +35,6 @@ public class Test1 extends Frame {
 	   img = t.getImage("images/Kanu.jpg");
 	   img2 = t.getImage("images/Kanu12.jpg");
 
-	    
-	    
-	    
-	    
-	    
-	    
 	    
 	    
 	    
@@ -125,8 +119,8 @@ public class Test1 extends Frame {
 	    
 	    p1.add(L1); p1.add(cb1);p1.add(cb2);p1.add(cb3);
 	    p2.add(L2); p2.add(cb4); p2.add(cb5); p2.add(cb6);
-	    add(ok); add(L3); 
-	    add(p1); add(p2); 
+	   add(ok); add(L3); 
+	   add(p1); add(p2); 
 	    
 	    
 		this.setVisible(true);

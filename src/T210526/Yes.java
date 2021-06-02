@@ -151,8 +151,6 @@ public class Yes extends Frame{
 	      
 	   }
 	
-
-	
 	
 	public static void main(String[] args) {
 		
