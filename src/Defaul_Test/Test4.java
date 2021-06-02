@@ -1,3 +1,4 @@
+package Defaul_Test;
 // 행입력해서 별찍기
 
 import java.util.Scanner;
