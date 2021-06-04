@@ -1,6 +1,7 @@
 package T210602;
 
 import java.awt.*;
+import java.awt.Desktop.Action;
 import java.util.*;
 import java.awt.event.*;
 
@@ -24,12 +25,13 @@ public class Test1 extends Frame {
 		p1.setBounds(20, 30, 500, 500);
 		
 		for(int i=0; i<9;i++) {
-			arr[i] = new Button();
-			p1.add(arr[i]);
-			arr[i].addActionListener(new EventButton());								// 감지기, 감지하면 이벤트 버튼 클래스로 감
+				arr[i] = new Button();
+				p1.add(arr[i]);
+				arr[i].addActionListener(new EventButton());								// 감지기, 감지하면 이벤트 버튼 클래스로 감
+				
 		}
 		
-
+		
 		
 
 		
@@ -50,6 +52,7 @@ public class Test1 extends Frame {
 		  public void actionPerformed(ActionEvent e) {
 			  Button bo = (Button)e.getSource();
 			  bo.setBackground(Color.black);
+
 		  }
 	}
 	
@@ -64,3 +67,6 @@ public class Test1 extends Frame {
 	}
 
 }
+
+
+// https://dreamingdreamer.tistory.com/74  ㅠㅠ
