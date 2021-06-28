@@ -11,7 +11,6 @@ class Click implements ActionListener{
 }
 
 
-
 public class Test7 {
 	
 	public static void main(String[] args) {
@@ -26,7 +25,7 @@ public class Test7 {
 		b1.setBounds(70, 75, 100, 100);
 		b1.addActionListener(new Click());		// 2. 감지기(이벤트 리스너) 깨래보니?
 		
-		
+			
 		Button b2 = new Button("최소");
 		b2.setBounds(270, 75, 100, 100);
 		b2.addActionListener(new ActionListener() {
@@ -37,21 +36,16 @@ public class Test7 {
 		
 		
 		
-		
-		
 		f.addWindowListener(new WindowAdapter() {	///****익명클래쓰****
 			public void windowClosing(WindowEvent e) {
 				System.out.println("프레임 종료합니다.");
 				System.exit(0);						//  프로그램 종료.. 위 과정하면 안전하게 종료!
 			}
-		});	
-		
+		});
 		
 		
 		f.add(b1);	f.add(b2);
 		f.setVisible(true);
 		
-		
 	}
-
 }

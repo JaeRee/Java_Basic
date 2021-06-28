@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-package T210523;
-
-import java.util.UUID;
-
-public class Test3 {
-	
-	public static void main(String[] args) {
-			
-		
-		UUID id = UUID.randomUUID();
-		
-		System.out.println(id);
-		
-		String str = "527c3932-685a-4098-8c8d-b41da6294dcc";
-		
-		System.out.println(str.length());
-	}
-
-}
-=======
 package T210524;
 
 
@@ -28,17 +7,18 @@ import java.awt.event.*; // 이벤트 처리하기 위해
 
 
 
-public class Test4 extends Frame{
+public class Test4_1 extends Frame{
    Checkbox cb1,cb2,cb3,cb4;
    CheckboxGroup group;
-   Label result;
+   Label result, result2;
    Panel p1;
+   Button ok;
    
-   Test4(String title){
+   Test4_1(String title){
       super(title);
-      setBounds(500,300,500,400);
+      setBounds(500,300,600,450);
       setLayout(null); // 프레임 레이아웃 사용 안함.
-      setBackground(Color.LIGHT_GRAY);
+      setBackground(Color.pink);
       Font f2 = new Font("SansSeif",Font.ROMAN_BASELINE,25);
       
       
@@ -81,11 +61,28 @@ public class Test4 extends Frame{
       result.setAlignment(Label.CENTER);
       
    
+      
+      // Label result2 부분  //
+      result2 = new Label();
+      result2.setBounds(65, 300,480,60);
+      result2.setBackground(Color.yellow);
+      result2.setFont(f2);
+      result2.setAlignment(Label.CENTER);
+      
+      
+      // ok 버튼
+      ok = new Button("선택");
+      ok.setBounds(470, 80, 80, 150);
+      ok.setBackground(new Color(0,64,128));
+      ok.setForeground(Color.white);
+      ok.setFont(f2);
+      
+      
+      ok.addActionListener(new EventF());    //감지기 ok 버튼을 눌렀을 때 이벤트F로 이동
 
       
       // 프레임에 컨포넌트 add //
-            add(p1);
-            add(result);
+            add(p1); add(result); add(ok); add(result2);
       this.setVisible(true);
    }
    class EventE implements ItemListener {
@@ -93,8 +90,8 @@ public class Test4 extends Frame{
          Checkbox cb = (Checkbox)e.getSource();
          String color = cb.getLabel();
          
-         if(color.equals("A형")){
-            result.setText(color+"을 선택하셨습니다.");
+      if(color.equals("A형")){
+          result.setText(color+"을 선택하셨습니다.");
       }
       else if(color.equals("B형")){
          result.setText(color+"을 선택하셨습니다.");
@@ -106,11 +103,35 @@ public class Test4 extends Frame{
       }
    
    }
+}
+   
+   
+   
+   class EventF implements ActionListener{
+
+	public void actionPerformed(ActionEvent e) {
+		
+
+		if(cb1.getState()) {
+			result2.setText(cb1.getLabel()+"을 선택하셨습니다.");
+		} else if(cb2.getState()) {
+			result2.setText(cb2.getLabel()+"을 선택하셨습니다.");
+		} else if(cb3.getState()) {
+			result2.setText(cb3.getLabel()+"을 선택하셨습니다.");
+		}else if(cb4.getState())  {
+			result2.setText("AB형을 선택하셨습니다.");
+		}else {
+			result2.setForeground(Color.red);
+			result2.setText("혈액형을 선택해주세요");
+		}
+	
+   }
+			
    }
    
+   
    public static void main(String[] args) {
-      new Test4("혈액형 프로그램");
+      new Test4_1("혈액형 프로그램");
    }
 
 }
->>>>>>> 1cfce454ef19cbb845c235f58fac5ee4439b87f9
